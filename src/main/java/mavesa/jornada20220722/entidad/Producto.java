@@ -20,6 +20,6 @@ public class Producto {
    @Column(length=100)
    private String nombreProducto;
    private int stockProducto;
-   @ManyToOne
+   @ManyToOne(fetch = FetchType.EAGER)
    private CategoriaProducto catProd;
 }
