@@ -20,4 +20,6 @@ public class Producto {
    @Column(length=100)
    private String nombreProducto;
    private int stockProducto;
+   @ManyToOne
+   private CategoriaProducto catProd;
 }
