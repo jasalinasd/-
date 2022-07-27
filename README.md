@@ -72,3 +72,26 @@ Caused by: java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.Qu
 public List<ProductoAgrupadoVO> agrupar();
 ```
 
+## Ejemplo de agrupacion
+
+Quisiera saber cuantas solicitudes ha hecho por cliente.
+
+1)
+
+| Nombre Cliente (agrupar por ese valor) | Cantidad (funcion de agregacion SUM) |
+| -------------------------------------- | ------------------------------------ |
+| John Doe                               | 555                                  |
+| Anna Smith                             | 666                                  |
+
+2)
+
+```java
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class AgruparClienteVO {
+    private String nombre;
+    private long cantidad;
+}
+```

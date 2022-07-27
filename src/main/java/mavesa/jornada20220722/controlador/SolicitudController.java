@@ -6,6 +6,7 @@ import mavesa.jornada20220722.entidad.Solicitud;
 import mavesa.jornada20220722.repo.IClienteRepo;
 import mavesa.jornada20220722.repo.IProductoRepo;
 import mavesa.jornada20220722.repo.ISolicitudRepo;
+import mavesa.jornada20220722.valueobject.AgruparClienteVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +24,12 @@ public class SolicitudController {
     @GetMapping("/listasol")
     public List<Solicitud> listasol(){
         return (List<Solicitud>) isolrepo.findAll();
+    }
+
+    // http://localhost:8080/ventas/listaragrupado
+    @GetMapping("/listaragrupado")
+    public List<AgruparClienteVO> listarAgrupado() {
+        return isolrepo.listarAgrupado();
     }
 
     @PostMapping("/crear")
